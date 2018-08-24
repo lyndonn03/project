@@ -2,6 +2,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.module.js');
 
+
 const serverConfig = {
   mode: "development",
   entry: "./server/react/client.js",
