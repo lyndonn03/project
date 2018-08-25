@@ -1,13 +1,16 @@
 import React from 'react';
 import { StaticRouter } from 'react-router-dom';
 import { renderToString } from 'react-dom/server';
-import Routes from './react/Routes';
+import Routes from '../react/Routes';
+import { Provider } from 'react-redux';
 
-const Boilerplate = (loc) => {
+const Boilerplate = (loc, store) => {
   const DOM = renderToString(
-    <StaticRouter location={loc.url} context={{}}>
-     < Routes />
-    </StaticRouter>
+    <Provider store={store}>
+      <StaticRouter location={loc.url} context={{}}>
+       < Routes />
+      </StaticRouter>
+    </Provider>
 
   );
 
