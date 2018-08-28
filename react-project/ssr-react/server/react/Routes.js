@@ -1,15 +1,19 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
 import HomeRoute from './components/HomeRoute';
-import UserRoute from './components/UserRoute';
+import UserRoute, { loadData } from './components/UserRoute';
 
-const Routes = () => {
-  return(
-    <div>
-      <Route exact path={"/"} component={HomeRoute} />
-      <Route path={"/users"} component={UserRoute} />
-    </div>
-  );
-}
+const Routes = [
+  {
+    component: HomeRoute,
+    path: '/',
+    exact: true
+  },
+  {
+    loadData,
+    component: UserRoute,
+    path: '/users'
+  }
+]
 
 export default Routes;

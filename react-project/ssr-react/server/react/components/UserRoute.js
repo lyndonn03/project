@@ -33,5 +33,8 @@ function mapStateToProps(state) {
   }
 }
 
+export const loadData = (store) => {
+  return store.dispatch(fetchUserAction());
+}
 
-export default connect(mapStateToProps,{ fetchUserAction } )(UserRoute);
+export default connect(mapStateToProps, { fetchUserAction } )(UserRoute);
