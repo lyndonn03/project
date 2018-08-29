@@ -33,8 +33,11 @@ function mapStateToProps(state) {
   }
 }
 
-export const loadData = (store) => {
+const loadData = (store) => {
   return store.dispatch(fetchUserAction());
 }
 
-export default connect(mapStateToProps, { fetchUserAction } )(UserRoute);
+export default {
+  component: connect(mapStateToProps, { fetchUserAction } )(UserRoute),
+  loadData
+};

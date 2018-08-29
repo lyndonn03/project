@@ -1,17 +1,16 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
 import HomeRoute from './components/HomeRoute';
-import UserRoute, { loadData } from './components/UserRoute';
+import UserRoute from './components/UserRoute';
 
 const Routes = [
   {
-    component: HomeRoute,
+    ...HomeRoute,
     path: '/',
     exact: true
   },
   {
-    loadData,
-    component: UserRoute,
+    ...UserRoute,
     path: '/users'
   }
 ]

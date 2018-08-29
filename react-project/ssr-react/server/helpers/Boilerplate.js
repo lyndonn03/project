@@ -4,6 +4,7 @@ import { renderToString } from 'react-dom/server';
 import { renderRoutes } from 'react-router-config';
 import Routes from '../react/Routes';
 import { Provider } from 'react-redux';
+import serialize from 'serialize-javascript';
 
 const Boilerplate = (loc, store) => {
   const DOM = renderToString(
@@ -27,7 +28,10 @@ const Boilerplate = (loc, store) => {
 
       <BODY>
         <div id="root">${DOM}</div>
-        <script src="bundle.js" deffer></script>
+        <script>
+          window.INITIAL_STATE = ${serialize(store.getState())}
+        </script>
+        <script src="bundle.js"></script>
       </BODY>
     </HTML>
   `;

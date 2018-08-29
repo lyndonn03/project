@@ -10,4 +10,6 @@ const HomeRoute = () => {
   );
 }
 
-export default HomeRoute;
+export default {
+  component: HomeRoute
+};
