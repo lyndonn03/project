@@ -25,6 +25,7 @@ body, html {
     margin-top: 10px;   
 }
 .bar::after, .bar2::after, .bar3::after {
+    border-radius: 2px;
     content: '';
     display: block;
     width: 80px;
