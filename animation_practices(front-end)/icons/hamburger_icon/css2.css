@@ -1,0 +1,53 @@
+#box2 {
+    background: #1C191A;
+    color: #DB5308;
+    margin: 10px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    border: 1px solid gray;
+    height: 200px;
+    width: 200px;
+}
+#box2 #con2 {
+    display: flex;
+    align-items: center;
+}
+
+#hamb2 {
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Safari */
+    transform: rotate(-90deg); /* Standard syntax */
+}
+
+#box2 #hamb2 .b2-bar, #box2 #hamb2 .b2-bar2 {
+    transition: .5s;
+    background-color: #DB5308;
+    width: 70px;
+    height: 5px;
+}
+#box2 #hamb2 .b2-bar2 {
+    margin-top: 15px;
+}
+
+#box2:hover .b2-bar, #box2:hover .b2-bar2 {
+    margin-top: -1px !important;    
+    transform: rotate(180deg);
+    width: 90px !important;
+    height: 2.5px !important;
+}
+
+#menu {
+    font-family: "Horizon";
+    position: relative;
+    left: -35px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: opacity .2s ease-in-out;
+}
+#box2:hover #menu {
+    opacity: 1;
+}
