@@ -6,7 +6,6 @@ body, html {
     justify-content: center;
 
 }
-
 #box {
     display: flex;
     align-items:center;
@@ -15,69 +14,37 @@ body, html {
     height: 200px;
     width: 200px;
 }
-
-
 .bar, .bar2, .bar3 {
     height: 5px;
-    background-color: #232323;
+    background-color: #626262;
     border-radius: 2px;
     width: 80px;
 
 }
-
 .bar2, .bar3 {
     margin-top: 10px;   
 }
-
-
-.bar:after, .bar2:after, .bar3:after {
+.bar::after, .bar2::after, .bar3::after {
     content: '';
-    display: none;
-    width: 100%;
-    height: 100%;
-    background: #626262;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    z-index: 1;
-    transform: translate(-80px, 0px);
-}
-
-
-#box:hover .bar:after, #box:hover .bar2:after,  #box:hover .bar3:after {
-    /* -webkit-transition: 2.3s;
-    transition: 2.3s ease-in; */
-    animation-name: move;
-    animation-duration: .3s;
-    animation-delay: 0s;
-    animation-fill-mode: both;
     display: block;
-    position: relative;
+    width: 80px;
+    height: 100%;
+    background: #232323;
+    top: 0;
+    right: 200%;
+    z-index: 1;
+    transition: width .3s ease-in-out;
+}
+.bar2::after {
+    transition-delay: .15s;
+}
+.bar3:after {
+    transition-delay: .3s;
+}
+#box:hover .bar:after, #box:hover .bar2:after,  #box:hover .bar3:after {
+    display: block;
+    width: 0px;
 }
 
-#box:hover .bar2:after {
-    animation-delay: .15s;
-}
 
-#box:hover .bar3:after {
-    animation-delay: .3s;
-}
 
-@keyframes move {
-    0% {
-        display: none;
-        transform: translate(0, 0);
-        width: 0%;
-      }
-    
-      /* Finish changes by here */
-      20% {
-        transform: translate(-16px, 0);
-        width: 20%;
-      }
-    
-      /* Between 20% and 100%, nothing changes */
-      100% {
-        transform: translate(-80px, 0);
-      }
-}
