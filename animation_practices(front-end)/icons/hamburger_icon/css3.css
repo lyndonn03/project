@@ -1,0 +1,38 @@
+#box3 {
+    margin: 10px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    border: 1px solid gray;
+    height: 200px;
+    width: 200px;
+}
+
+
+.b3-bar, .b3-bar2, .b3-bar3  {
+    height: 5px;
+    width: 80px;
+    background-color: #232323;
+    display: block;
+    position: relative;
+    transition: .15s;
+}
+
+.b3-bar3, .b3-bar2 {
+    margin-top: 6px;
+}
+
+#box3:hover .b3-bar2 {
+    transform: translateX(-50px);
+    opacity: 0;
+}
+
+#box3:hover .b3-bar {
+    margin-top: 15px;
+    transform: rotate(35deg);
+}
+
+#box3:hover .b3-bar3 {
+    margin-top: -15px;
+    transform: rotate(-35deg);
+}
